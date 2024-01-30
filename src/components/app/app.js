@@ -7,6 +7,13 @@ import EmployeesAddForm from "../employees-add-form/employees-add-form";
 import './app.css';
 
 function App() {
+
+    const data = [
+        {name: "John C.", salary: 800, increase: false, key: 1},
+        {name: "Alex M.", salary: 3000, increase: false, key: 2},
+        {name: "Carl W.", salary: 5000, increase: false, key: 3}
+    ];
+
     return (
         <div className='app'>
             <AppInfo/>
@@ -16,7 +23,9 @@ function App() {
                 <AppFilter/>
             </div>
 
-            <EmployeesList/>
+            <EmployeesList
+                data={data}
+                onDelete={id => console.log(id)}/>
             <EmployeesAddForm/>
         </div>
     )
